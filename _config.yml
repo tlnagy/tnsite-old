@@ -1,0 +1,27 @@
+name: tamas nagy
+url: http://www.tamasnagy.com
+pygments: true
+permalink: /:categories/:title/
+
+author:
+  name: Tamas Nagy
+  email: tamas@tamasnagy.com
+  gravatar: f0373dd7cb70ffcd7d803827cfabecca
+  github: http://github.com/tlnagy
+  500px: http://500px.com/tlnagy
+  twitter: http://twitter.com/tlngy
+  gscholar: http://scholar.google.com/citations?user=DDh3HxQAAAAJ
+
+markdown: pandoc
+pandoc:
+  skip: true
+  flags: '--smart --mathjax --filter pandoc-citeproc'
+
+sitemap:
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/blog/index.html"
+        - "/projects/index.html"

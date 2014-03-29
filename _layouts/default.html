@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">{% if page.categories.first != 'home' %}
+  <title>{{ site.name }} | {{ page.title }}</title>
+  <meta property="og:title" content="{{ site.name }} | {{ page.title }}" />
+  {% else %}
+  <title>{{ site.name }}</title>
+  <meta property="og:title" content="{{ site.name }}" />
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tamas Nagy">
+  
+  
+  
+  <meta name="MobileOptimized">  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <script type="text/javascript">
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+      var msViewportStyle = document.createElement('style')
+      msViewportStyle.appendChild(document.createTextNode(
+      '@-ms-viewport{width:auto!important}'))
+      document.querySelector('head').appendChild(msViewportStyle)
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {% if page.categories.first != 'home' %}
+        <a class="navbar-brand" href="/">
+          <object class="logo" data="/images/logo_white.svg" type="image/svg+xml"></object>
+          <span>{{ site.name }}</span>
+        </a>
+        {% endif %}
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          {% if page.categories.first == 'blog' %}
+          <li class="active">
+            {% else %}
+            <li>
+              {% endif %}
+              <a href="/blog/">Blog</a>
+            </li>
+            {% if page.categories.first == 'projects' %}
+            <li class="active">
+              {% else %}
+              <li>
+                {% endif %}
+                <a href="/projects/">Projects</a>
+              </li>
+              {% if page.categories.first == 'about' %}
+              <li class="active">
+                {% else %}
+                <li>
+                  {% endif %}
+                  <a href="/about/">About</a>
+                </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    {{ content }}
+
+    <div class="bigspacer"></div>
+    <div class="footer">
+      <p>Copyright © 2013-2014
+        <a href="{{ site.author.twitter }}">Tamas Nagy</a>
+        <br>Powered by
+        <a href="http://greenqloud.com">100% renewable, sustainable energy</a>
+      </p>
+    </div>
+    <div class="xxlspacer"></div>
+  </div>
+
+  <script src="/js/jquery-2.1.0.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

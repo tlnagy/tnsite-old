@@ -1,0 +1,55 @@
+--- 
+layout: default
+categories:
+- home
+---
+<div class="bigspacer"></div>
+<div>
+  <object class="big-logo home" data="/images/logo.svg" type="image/svg+xml"></object>
+  <h1 class="home">{{ site.name }}</h1>
+</div>
+<div class="bigspacer"></div>
+<p class="lead">I'm a Biochemistry & Applied Mathematics student at the
+  <a href="http://uky.edu">University of Kentucky</a> who is investigating the role of transmembrane domains in enveloped virus fusion. I'm also interested in systems biology, biochemistry, statistics, and open science.</p>
+<div class="medspacer"></div>
+<div class="row">
+  <div class="col-md-6">
+    <div class "head">
+      <h3><a href="/blog/">Recent posts</a></h3>
+    </div>
+    <div class="medspacer"></div>
+    <div class="feeds">
+          {% for post in site.categories.blog limit:5 %}
+            
+            <div class="feeditemtitle">
+                <i class="fa fa-file-text-o fa-lg"></i>
+                <span class="h4"><a href="{{ post.url }}">
+                  {{ post.title }}
+                </a></span>
+            </div>
+            <div class="smlspace"></div>
+            <span>Posted {{ post.date | date_to_string}} by <a href="/about/">{{ post.author }}</a></span>
+          {% endfor %}
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class "head">
+      <h3><a href="/blog/">Recent Projects</a></h3>
+    </div>
+    <div class="medspacer"></div>
+    <div class="feeds">
+          {% for post in site.categories.projects limit:5 %}
+            
+            <div class="feeditemtitle">
+                <i class="fa fa-cogs fa-lg"></i>
+                <span class="h4"><a href="{{ post.url }}">
+                  {{ post.title }}
+                </a></span>
+            </div>
+            <div class="smlspace"></div>
+            <span>Updated {{ post.date | date_to_string}}</span>
+          {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="bigspacer"></div>

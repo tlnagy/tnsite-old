@@ -1,0 +1,25 @@
+---
+layout: default
+title: Projects
+categories:
+- projects
+---
+<div class="bigspacer"></div>	
+
+{% for post in site.categories.projects %}
+    {% cycle 'add rows': '<div class="row">', nil, nil %}
+          <div class="col-md-4 itembox">
+			<div class="smallhead">
+				<i class="fa fa-cogs fa-lg"></i> <a href="{{ post.url }}"><span class="h4">{{ post.title }}</span></a>
+			</div>	
+			<div class="smlspacer"></div>
+			<div class="smallnote">
+                <div class="smlspacer"></div>
+				{% if post.author %}
+				by <a href="/about/">{{ post.author }}</a>
+				{% endif %}	
+			</div>
+        </div>
+    {% cycle 'close rows': nil, nil, '</div><div class="smlspacer"></div>' %}
+{% endfor %}
+{% cycle 'close rows': nil, '</div><div class="bigspacer"></div>', '</div><div class="bigspacer"></div>' %}

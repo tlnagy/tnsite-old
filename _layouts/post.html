@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+<div class="smlspacer"></div>
+<p class="meta"><img class="miniprofile" src="http://www.gravatar.com/avatar/{{ site.author.gravatar }}?s=64"><a href="/about/">{{ page.author }}</a> posted on {{ page.date | date_to_string }}</p>
+<div class="bigspacer"></div>
+<div class="row">
+  <div class="col-md-8">
+    {{ content }}
+    <div class="smlspacer"></div>
+    <a href="https://twitter.com/share?text={{page.title}}&url={{ site.url }}{{ page.url }}&via={{ site.author.twitter | remove:'http://twitter.com/'}}" title="Retweet this article" class="tweetbutton" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter fa-2x"></i></a>
+  </div>
+  <div class="col-md-3 col-md-offset-1">
+    <h3>Tags</h3>
+    <ul class="tag_box">
+      {% for tag in site.tags %}
+        <li><a href="{{ site.urls }}/tags/#{{ tag[0] }}">{{ tag[0] }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
