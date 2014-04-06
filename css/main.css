@@ -119,6 +119,7 @@ a .itembox {
 
 .itembox {
   padding: 15px;
+  border-top: 4px #6f5499 solid;
 }
 
 .itembox:hover {
@@ -166,6 +167,13 @@ a .itembox {
 
 .tag_box a:hover {
   background-color: #e5e5e5;
+}
+
+.tag_box li{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px; 
 }
 
 body {

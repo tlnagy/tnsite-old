@@ -1,5 +1,6 @@
 ---
 layout: default
+description: true
 ---
 <h1>{{ page.title }}</h1>
 <div class="smlspacer"></div>
@@ -12,11 +13,14 @@ layout: default
     <a href="https://twitter.com/share?text={{page.title}}&url={{ site.url }}{{ page.url }}&via={{ site.author.twitter | remove:'http://twitter.com/'}}" title="Retweet this article" class="tweetbutton" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter fa-2x"></i></a>
   </div>
   <div class="col-md-3 col-md-offset-1">
-    <h3>Tags</h3>
+    <h3><i class="fa fa-tags"></i> Tags</h3>
     <ul class="tag_box">
-      {% for tag in site.tags %}
-        <li><a href="{{ site.urls }}/tags/#{{ tag[0] }}">{{ tag[0] }}</a></li>
-      {% endfor %}
+      {% unless page.tags == empty %}
+  		<ul class="tag_box inline">
+    		{% assign tags_list = page.tags %}
+    		{% include tags_list.html %}
+  		</ul>
+	{% endunless %}
     </ul>
   </div>
 </div>
