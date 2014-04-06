@@ -2,6 +2,7 @@ name: tamas nagy
 url: http://www.tamasnagy.com
 pygments: true
 permalink: /:categories/:title/
+description: "Tamas Nagy | Biochemistry and Applied Mathematics student at the University of Kentucky."
 
 author:
   name: Tamas Nagy
@@ -10,6 +11,7 @@ author:
   github: http://github.com/tlnagy
   500px: http://500px.com/tlnagy
   twitter: http://twitter.com/tlngy
+  twitterid: 553965890
   gscholar: http://scholar.google.com/citations?user=DDh3HxQAAAAJ
 
 markdown: pandoc

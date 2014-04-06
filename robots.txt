@@ -2,3 +2,6 @@ Sitemap: http://www.tamasnagy.com/sitemap.xml
 
 User-agent: *
 Disallow: /images/
+
+User-agent: Twitterbot
+Disallow:

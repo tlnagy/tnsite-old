@@ -3,18 +3,30 @@
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">{% if page.categories.first != 'home' %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="author" content="Tamas Nagy">
+  {% if page.categories.first != 'home' %}
   <title>{{ site.name }} | {{ page.title }}</title>
   <meta property="og:title" content="{{ site.name }} | {{ page.title }}" />
+  <meta name="twitter:title" content="{{ page.title }}">
   {% else %}
   <title>{{ site.name }}</title>
   <meta property="og:title" content="{{ site.name }}" />
+  <meta name="twitter:title" content="Science, math, and more from Tamas Nagy">
   {% endif %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator:id" content="{{ site.author.twitterid }}">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% if page.description %}
+  <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
+  {% else %}
+  <meta name="twitter:description" content="{{ site.description }}">
+  {% endif %}
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Tamas Nagy">
-  
-  
-  
   <meta name="MobileOptimized">  
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
